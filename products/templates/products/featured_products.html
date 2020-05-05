@@ -1,0 +1,33 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    List
+{% endblock  %}
+
+{% block content %}
+    <h1> Produt list  </h1>
+    <table class="ui celled table">
+      <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for obj in products %}
+            <tr>
+            <td data-label="title"> 
+              <a href="{% url 'products-detail' obj.pk %}">
+               {{ obj.title }} 
+              </a>
+            </td>
+            <td data-label="description"> {{ obj.description }} </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   
+
+    
+
+{% endblock  %}

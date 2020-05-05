@@ -1,0 +1,35 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Detail
+{% endblock  %}
+
+{% block content %}
+    <h2> Detail </h2>
+
+    <div class="ui card">
+       <div class="image">
+            <img src="{{ object.image.url }}">
+        </div>
+  
+        <div class="content">
+            <a class="header">{{ object.title }}</a>
+            <div class="meta">
+                <span class="date">Came in 2013</span>
+                </div>
+                <div class="description">
+                {{ object.description }}
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                <i class="user icon"></i>
+                22 Friends
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+<!-- /Users/manishjha/Desktop/coding/django-apps/ecommerce/products/73293905/73293905lord-shiva-hd-wallpapers_.jpg -->

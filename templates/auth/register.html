@@ -1,0 +1,16 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Register Please
+{% endblock  %}
+
+{% block content %}
+    <form method="POST">
+        <div class="ui form">
+            {% csrf_token %}
+            {{ register_form }}
+        </div>
+        <br />
+        <button type="submit" class="ui primary button">Register</button>
+    </form>
+{% endblock  %}

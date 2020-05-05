@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    
+    <meta charset="UTF-8">
+    <title> {% block title %}  Title {% endblock %} </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        ul > li {
+            list-style-type : none ;
+        }
+
+        nav-side-menu{
+                margin-top: 143px;
+        }
+    </style>
+
+    {% endblock  %}
+</head>
+<body>
+
+    {% include 'products/navbar.html' %} 
+    <div class="ui container">
+     <div>
+     <br />
+        {% if messages %}
+            <ul class="messages">
+                {% for msg in messages %}       
+                <li>
+                    <div class="alert alert-{{msg.level_tag}}" role="alert">
+                    {{msg.message}}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+     </div>
+        {% block content %}
+            <h3> Product List from ProductList class which is extending ListView class.  </h3>
+        {% endblock %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Login
+{% endblock  %}
+
+{% block content %}
+    <form method="POST">
+        <div class="ui form">
+            {% csrf_token %}
+            {{ form }}
+        </div>
+
+        <br />
+        <button type="submit" class="ui primary button">Login</button>
+    </form>
+{% endblock  %}

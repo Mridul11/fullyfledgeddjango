@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block title %}   
+    Tags Home 
+{% endblock  %}
+
+{% block content %}
+    <h2> Tag Home page with the tag form </h2>
+    <div class="ui form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <br />
+            <button type="submit" class="ui primary button">Submit</button>
+        </form>
+    </div>
+{% endblock  %}
